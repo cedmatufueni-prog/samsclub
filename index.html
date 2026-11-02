@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Sam's Club $750 Gift Card Opportunity</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        samsBlue: '#0067A5',
+                        samsDarkBlue: '#005285',
+                        samsLightBg: '#F4F7FA',
+                        samsGreen: '#10B981',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .gradient-card {
+            background: linear-gradient(135deg, #0067A5 0%, #005285 100%);
+        }
+        /* Smooth Fade Transition */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 flex flex-col justify-between antialiased selection:bg-blue-100">
+
+    <!-- Header / Brand Navigation -->
+    <header class="w-full bg-white border-b border-slate-200 py-3 px-3 sm:px-8 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-4xl mx-auto flex justify-between items-center text-xs sm:text-sm">
+            <span class="font-semibold text-slate-600 truncate mr-2">Exclusive Reward Program</span>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-full font-semibold bg-[#0067A5]/10 text-samsBlue border border-[#0067A5]/20 flex-shrink-0">
+                Verified Program
+            </span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-md sm:max-w-xl mx-auto px-3 sm:px-4 py-5 sm:py-10 w-full flex-grow flex flex-col justify-center">
+        
+        <!-- Header Tagline -->
+        <div class="text-center mb-4 sm:mb-6">
+            <span class="inline-block px-3 py-1 mb-2 sm:mb-3 text-[11px] sm:text-xs font-bold tracking-wider text-samsBlue bg-[#0067A5]/10 rounded-full uppercase">
+                Exclusive Reward Opportunity
+            </span>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                Sam's Club <span class="text-samsBlue">$750 Gift Card</span>
+            </h1>
+            <p class="mt-1.5 sm:mt-2 text-xs sm:text-base text-slate-600 max-w-xs sm:max-w-md mx-auto">
+                Follow the simple steps below to check eligibility and claim your reward today.
+            </p>
+        </div>
+
+        <!-- Main Interactive Card -->
+        <div class="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+            
+            <!-- Gift Card Graphic Header -->
+            <div class="gradient-card p-5 sm:p-8 text-center text-white relative overflow-hidden">
+                <!-- Background subtle decorative shapes -->
+                <div class="absolute -top-10 -right-10 w-28 sm:w-32 h-28 sm:h-32 rounded-full bg-white/10 blur-xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-28 sm:w-32 h-28 sm:h-32 rounded-full bg-white/10 blur-xl"></div>
+
+                <div class="relative z-10">
+                    <p class="text-[10px] sm:text-xs uppercase tracking-widest font-semibold text-white/90 mb-0.5">SAM'S CLUB REWARD</p>
+                    <div class="text-4xl sm:text-6xl font-black tracking-tight mb-1 sm:mb-2">
+                        $750
+                    </div>
+                    <div class="inline-block bg-white/20 backdrop-blur-md px-3 sm:px-4 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-xs font-bold tracking-wider uppercase border border-white/30">
+                        Gift Card
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD BODY CONTENT (DYNAMIC CONTENT VIA JS) -->
+            <div class="p-4 sm:p-8">
+
+                <!-- STEP 1: INITIAL QUIZ START -->
+                <div id="quiz-start-step" class="fade-in text-center space-y-4 sm:space-y-5">
+                    <!-- Centered Logo Image under gift card text -->
+                    <div class="flex justify-center items-center pt-1">
+                        <img src="https://i.ibb.co/bRN0QQwc/sams-club.png" 
+                             onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sam%27s_Club_logo.svg/512px-Sam%27s_Club_logo.svg.png';" 
+                             alt="Sam's Club Logo" 
+                             class="h-12 sm:h-20 max-w-[200px] sm:max-w-[240px] object-contain" />
+                    </div>
+
+                    <h2 class="text-lg sm:text-xl font-bold text-slate-900">
+                        Quick Eligibility Check
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 max-w-xs sm:max-w-md mx-auto leading-relaxed">
+                        Answer 3 quick questions to check if you qualify for the $750 Sam's Club Gift Card reward program.
+                    </p>
+
+                    <button onclick="startQuiz()" class="w-full py-3.5 sm:py-4 px-5 bg-samsBlue hover:bg-samsDarkBlue active:scale-98 text-white font-extrabold text-base sm:text-lg rounded-xl shadow-md hover:shadow-lg transition-all uppercase tracking-wide touch-manipulation">
+                        GET STARTED NOW
+                    </button>
+                </div>
+
+                <!-- STEP 2: QUIZ QUESTIONS (HIDDEN INITIALLY) -->
+                <div id="quiz-questions-step" class="hidden fade-in space-y-5 sm:space-y-6">
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                        <div id="quiz-progress" class="bg-samsBlue h-2 rounded-full transition-all duration-300" style="width: 33%"></div>
+                    </div>
+                    
+                    <div class="text-[11px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider text-center" id="question-number">
+                        Question 1 of 3
+                    </div>
+
+                    <!-- Question Content -->
+                    <div class="text-center">
+                        <h3 id="question-text" class="text-base sm:text-lg font-bold text-slate-900 mb-4 sm:mb-6">
+                            Do you shop at Sam's Club or online at SamsClub.com?
+                        </h3>
+
+                        <div id="options-container" class="space-y-2.5 sm:space-y-3">
+                            <!-- Dynamically generated buttons -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: VERIFYING / PROCESSING STATE -->
+                <div id="verifying-step" class="hidden fade-in text-center py-6 sm:py-8 space-y-3 sm:space-y-4">
+                    <div class="inline-block animate-spin rounded-full h-10 w-10 sm:h-12 sm:w-12 border-4 border-samsBlue border-t-transparent"></div>
+                    <h3 class="text-base sm:text-lg font-bold text-slate-900">Checking Eligibility...</h3>
+                    <p id="verification-status" class="text-xs text-slate-500 font-medium">Validating responses...</p>
+                </div>
+
+                <!-- STEP 4: HOW TO CLAIM & FINAL CTA (EXACT LAYOUT REQUESTED) -->
+                <div id="how-to-claim-step" class="hidden fade-in space-y-5 sm:space-y-6">
+                    <div class="border-b border-slate-100 pb-2.5">
+                        <h3 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-slate-800">
+                            HOW TO CLAIM:
+                        </h3>
+                    </div>
+
+                    <!-- Steps List -->
+                    <div class="space-y-4 sm:space-y-5">
+                        
+                        <!-- Step 1 -->
+                        <div class="flex items-start space-x-3 sm:space-x-4">
+                            <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100 text-slate-700 font-bold flex items-center justify-center text-xs sm:text-sm border border-slate-200">
+                                1
+                            </div>
+                            <div class="pt-0.5">
+                                <h4 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug">Click on the button below</h4>
+                                <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Access the official portal to begin.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="flex items-start space-x-3 sm:space-x-4">
+                            <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100 text-slate-700 font-bold flex items-center justify-center text-xs sm:text-sm border border-slate-200">
+                                2
+                            </div>
+                            <div class="pt-0.5">
+                                <h4 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug">Enter your email & basic info</h4>
+                                <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Provide accurate details for verification.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex items-start space-x-3 sm:space-x-4">
+                            <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100 text-slate-700 font-bold flex items-center justify-center text-xs sm:text-sm border border-slate-200">
+                                3
+                            </div>
+                            <div class="pt-0.5">
+                                <div class="flex items-center space-x-2">
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug">Complete 3-5 deals</h4>
+                                    <span class="bg-slate-200 text-slate-700 text-[9px] sm:text-[10px] font-semibold px-2 py-0.5 rounded-full italic">Required</span>
+                                </div>
+                                <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Must finish the specified number of deals.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="flex items-start space-x-3 sm:space-x-4">
+                            <div class="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100 text-slate-700 font-bold flex items-center justify-center text-xs sm:text-sm border border-slate-200">
+                                4
+                            </div>
+                            <div class="pt-0.5">
+                                <h4 class="text-xs sm:text-sm font-bold text-slate-900 leading-snug">Claim your reward</h4>
+                                <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Receive your $750 gift card via email.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Final CTA Button -->
+                    <div class="pt-1 sm:pt-2">
+                        <a id="claim-cta-btn" 
+                           href="https://linkthem.net/?offer_id=2965&aff_id=165890" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="block w-full py-3.5 sm:py-4 px-5 bg-samsBlue hover:bg-samsDarkBlue text-white font-extrabold text-center text-base sm:text-lg rounded-xl shadow-md hover:shadow-lg active:scale-98 transition-all uppercase tracking-wide touch-manipulation">
+                            CONTINUE
+                        </a>
+                    </div>
+
+                    <p class="text-[10px] sm:text-[11px] text-slate-400 text-center leading-relaxed pt-1">
+                        Subject to terms and conditions. Must be 18+ and a US resident. Reward issued upon completion of required tasks. This site is independent and not affiliated with or endorsed by Sam's Club.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center py-4 sm:py-6 text-[11px] sm:text-xs text-slate-400 border-t border-slate-100 bg-white">
+        <p>&copy; <span id="year"></span> Rewards Program. All rights reserved.</p>
+        <div class="mt-1.5 space-x-3 text-slate-500">
+            <a href="#" class="hover:underline">Privacy Policy</a>
+            <span>&bull;</span>
+            <a href="#" class="hover:underline">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript Quiz Logic -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const quizData = [
+            {
+                question: "How often do you shop at Sam's Club?",
+                options: ["Weekly", "Monthly", "A few times a year", "Never"]
+            },
+            {
+                question: "What do you usually purchase most?",
+                options: ["Groceries & Household", "Electronics & Appliances", "Clothing & Personal Care", "Other Items"]
+            },
+            {
+                question: "Are you a U.S. resident over 18 years old?",
+                options: ["Yes", "No"]
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function startQuiz() {
+            document.getElementById('quiz-start-step').classList.add('hidden');
+            document.getElementById('quiz-questions-step').classList.remove('hidden');
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = quizData[currentQuestion];
+            document.getElementById('question-number').textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
+            document.getElementById('question-text').textContent = q.question;
+            
+            // Progress Bar Width
+            const progressPercent = ((currentQuestion + 1) / quizData.length) * 100;
+            document.getElementById('quiz-progress').style.width = `${progressPercent}%`;
+
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            q.options.forEach(option => {
+                const btn = document.createElement('button');
+                btn.className = "w-full py-3 sm:py-3.5 px-4 bg-slate-50 hover:bg-samsBlue hover:text-white active:bg-samsDarkBlue active:text-white text-slate-800 font-semibold rounded-xl border border-slate-200 transition-all text-xs sm:text-sm text-left flex justify-between items-center group touch-manipulation";
+                btn.innerHTML = `<span>${option}</span> <span class="text-slate-400 group-hover:text-white">&rarr;</span>`;
+                btn.onclick = () => handleAnswer();
+                container.appendChild(btn);
+            });
+        }
+
+        function handleAnswer() {
+            if (currentQuestion < quizData.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showVerification();
+            }
+        }
+
+        function showVerification() {
+            document.getElementById('quiz-questions-step').classList.add('hidden');
+            document.getElementById('verifying-step').classList.remove('hidden');
+
+            const statusText = document.getElementById('verification-status');
+            
+            setTimeout(() => {
+                statusText.textContent = "Checking gift card availability...";
+            }, 1000);
+
+            setTimeout(() => {
+                statusText.textContent = "Eligibility confirmed!";
+            }, 2000);
+
+            setTimeout(() => {
+                document.getElementById('verifying-step').classList.add('hidden');
+                document.getElementById('how-to-claim-step').classList.remove('hidden');
+            }, 2800);
+        }
+    </script>
+
+</body>
+</html>
